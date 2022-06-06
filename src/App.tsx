@@ -1,9 +1,11 @@
-import type { Component } from 'solid-js';
+import { Button, Center } from '@hope-ui/solid';
+import { Component, createSignal } from 'solid-js';
 
 import styles from './App.module.css';
 import logo from './logo.svg';
 
 const App: Component = () => {
+    const [count, setCount] = createSignal(0);
     return (
         <div class={styles.App}>
             <header class={styles.header}>
@@ -19,6 +21,17 @@ const App: Component = () => {
                 >
                     Learn Solid
                 </a>
+                <Center>
+                    <p>count: {count}</p>
+                    <Button
+                        m={10}
+                        onClick={() => {
+                            setCount(count() + 1);
+                        }}
+                    >
+                        Up
+                    </Button>
+                </Center>
             </header>
         </div>
     );
