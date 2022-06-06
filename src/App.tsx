@@ -1,5 +1,6 @@
-import { Button, Center } from '@hope-ui/solid';
 import { Component, createSignal } from 'solid-js';
+
+import { Button, Center } from '@hope-ui/solid';
 
 import styles from './App.module.css';
 import logo from './logo.svg';
