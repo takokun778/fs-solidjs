@@ -4,6 +4,7 @@ import { Button, Center } from '@hope-ui/solid';
 
 import styles from './App.module.css';
 import logo from './logo.svg';
+import { setStore, store } from './store/store';
 
 const App: Component = () => {
     const [count, setCount] = createSignal(0);
@@ -23,11 +24,22 @@ const App: Component = () => {
                     Learn Solid
                 </a>
                 <Center>
-                    <p>count: {count}</p>
+                    <p>local: {count}</p>
                     <Button
                         m={10}
                         onClick={() => {
                             setCount(count() + 1);
+                        }}
+                    >
+                        Up
+                    </Button>
+                </Center>
+                <Center>
+                    <p>global: {store.count}</p>
+                    <Button
+                        m={10}
+                        onClick={() => {
+                            setStore({ count: store.count + 1 });
                         }}
                     >
                         Up
