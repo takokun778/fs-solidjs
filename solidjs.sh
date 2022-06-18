@@ -18,7 +18,7 @@ mv package.json temp.json
 
 touch package.json
 
-cat temp.json | jq '.scripts |= .+ {"format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json}\""}' >> package.json
+cat temp.json | jq '.scripts |= .+ {"format": "prettier --write --cache \"./**/*.{ts,tsx,js,jsx,json}\""}' >> package.json
 
 rm -rf temp.json
 
